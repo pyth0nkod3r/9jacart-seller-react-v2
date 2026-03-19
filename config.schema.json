@@ -1,0 +1,239 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Template Configuration",
+  "description": "Configuration schema for customizing the seller platform template",
+  "type": "object",
+  
+  "properties": {
+    "version": {
+      "type": "string",
+      "description": "Configuration version",
+      "default": "1.0.0"
+    },
+    
+    "brand": {
+      "type": "object",
+      "description": "Brand configuration",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Brand name displayed throughout the app"
+        },
+        "tagline": {
+          "type": "string",
+          "description": "Main headline/tagline"
+        },
+        "description": {
+          "type": "string",
+          "description": "Brand/platform description"
+        },
+        "logo": {
+          "type": "object",
+          "properties": {
+            "light": { "type": "string", "description": "Light mode logo path" },
+            "dark": { "type": "string", "description": "Dark mode logo path" },
+            "icon": { "type": "string", "description": "Icon/favicon path" }
+          },
+          "required": ["light", "dark", "icon"]
+        },
+        "favicon": { "type": "string" },
+        "copyright": { "type": "string" }
+      },
+      "required": ["name", "tagline", "description"]
+    },
+    
+    "theme": {
+      "type": "object",
+      "description": "Theme configuration",
+      "properties": {
+        "default": {
+          "type": "string",
+          "description": "Default theme ID to use",
+          "default": "default"
+        },
+        "available": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "List of available theme IDs"
+        },
+        "colors": {
+          "type": "object",
+          "description": "Color configurations for each theme",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "isDark": { "type": "boolean", "default": false },
+              "primary": { "type": "string", "format": "color" },
+              "primaryForeground": { "type": "string", "format": "color" },
+              "accent": { "type": "string", "format": "color" },
+              "background": { "type": "string", "format": "color" },
+              "foreground": { "type": "string", "format": "color" },
+              "secondary": { "type": "string", "format": "color" },
+              "muted": { "type": "string", "format": "color" },
+              "border": { "type": "string", "format": "color" },
+              "sidebar": {
+                "type": "object",
+                "properties": {
+                  "background": { "type": "string", "format": "color" },
+                  "foreground": { "type": "string", "format": "color" },
+                  "accent": { "type": "string", "format": "color" }
+                }
+              }
+            },
+            "required": ["name", "primary", "accent", "background"]
+          }
+        }
+      },
+      "required": ["default", "colors"]
+    },
+    
+    "features": {
+      "type": "object",
+      "description": "Feature flags",
+      "properties": {
+        "enableAnalytics": { "type": "boolean", "default": true },
+        "enableStorefront": { "type": "boolean", "default": true },
+        "enableNotifications": { "type": "boolean", "default": true },
+        "enableProducts": { "type": "boolean", "default": true },
+        "enableOrders": { "type": "boolean", "default": true },
+        "enableContactSupport": { "type": "boolean", "default": true },
+        "enableSettings": { "type": "boolean", "default": true },
+        "enableDarkMode": { "type": "boolean", "default": true },
+        "enableMultiLanguage": { "type": "boolean", "default": false },
+        "enableMultiCurrency": { "type": "boolean", "default": false },
+        "enableRealTimeUpdates": { "type": "boolean", "default": true },
+        "enableFileUpload": { "type": "boolean", "default": true },
+        "enableImageOptimization": { "type": "boolean", "default": true },
+        "enableSeoOptimization": { "type": "boolean", "default": true }
+      }
+    },
+    
+    "navigation": {
+      "type": "object",
+      "description": "Navigation configuration",
+      "properties": {
+        "mainNav": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "href": { "type": "string" }
+            },
+            "required": ["name", "href"]
+          }
+        },
+        "dashboardNav": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "href": { "type": "string" },
+              "icon": { "type": "string" }
+            },
+            "required": ["name", "href"]
+          }
+        },
+        "footerNav": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "href": { "type": "string" }
+            },
+            "required": ["name", "href"]
+          }
+        },
+        "legalLinks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": { "type": "string" },
+              "href": { "type": "string" }
+            },
+            "required": ["name", "href"]
+          }
+        }
+      }
+    },
+    
+    "stats": {
+      "type": "array",
+      "description": "Statistics to display",
+      "items": {
+        "type": "object",
+        "properties": {
+          "value": { "type": "string" },
+          "label": { "type": "string" },
+          "description": { "type": "string" }
+        },
+        "required": ["value", "label"]
+      }
+    },
+    
+    "contact": {
+      "type": "object",
+      "description": "Contact information",
+      "properties": {
+        "email": { "type": "string", "format": "email" },
+        "phone": { "type": "string" },
+        "address": { "type": "string" },
+        "supportHours": { "type": "string" }
+      }
+    },
+    
+    "socialLinks": {
+      "type": "array",
+      "description": "Social media links",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "href": { "type": "string", "format": "uri" },
+          "icon": { "type": "string" }
+        },
+        "required": ["name", "href", "icon"]
+      }
+    },
+    
+    "seo": {
+      "type": "object",
+      "description": "SEO configuration",
+      "properties": {
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "keywords": { "type": "array", "items": { "type": "string" } },
+        "ogImage": { "type": "string" },
+        "twitterHandle": { "type": "string" },
+        "siteUrl": { "type": "string", "format": "uri" }
+      }
+    },
+    
+    "texts": {
+      "type": "object",
+      "description": "Custom text content",
+      "properties": {
+        "hero": {
+          "type": "object",
+          "properties": {
+            "badge": { "type": "string" },
+            "cta": { "type": "string" },
+            "secondaryCta": { "type": "string" }
+          }
+        },
+        "footer": {
+          "type": "object",
+          "properties": {
+            "description": { "type": "string" }
+          }
+        }
+      }
+    }
+  },
+  
+  "required": ["brand", "theme"]
+}

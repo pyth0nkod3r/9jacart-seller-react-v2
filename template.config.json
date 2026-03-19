@@ -1,0 +1,249 @@
+{
+  "$schema": "./config.schema.json",
+  "version": "1.0.0",
+
+  "brand": {
+    "name": "SellerHub",
+    "tagline": "Grow Your Business with SellerHub",
+    "description": "The complete e-commerce platform for Nigerian sellers. Manage your products, track orders, and grow your business with powerful tools and analytics.",
+    "logo": {
+      "light": "/logo.svg",
+      "dark": "/logo.svg",
+      "icon": "/9Jacart Icon SVG.svg"
+    },
+    "favicon": "/logo.svg",
+    "copyright": "SellerHub. All rights reserved."
+  },
+
+  "theme": {
+    "default": "default",
+    "available": ["default", "dark", "ocean", "purple", "sunset"],
+
+    "colors": {
+      "default": {
+        "name": "Default Green",
+        "isDark": false,
+        "primary": "#16a34a",
+        "primaryHover": "#15803d",
+        "primaryLight": "#22c55e",
+        "primaryForeground": "#ffffff",
+        "accent": "#f59e0b",
+        "background": "#ffffff",
+        "surface": "#f8fafc",
+        "foreground": "#1e293b",
+        "textSecondary": "#64748b",
+        "textMuted": "#94a3b8",
+        "border": "#e2e8f0",
+        "success": "#22c55e",
+        "warning": "#f59e0b",
+        "danger": "#ef4444",
+        "info": "#3b82f6",
+        "sidebar": {
+          "background": "#1e293b",
+          "foreground": "#f1f5f9",
+          "accent": "#16a34a"
+        },
+        "cardShadow": "0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1)"
+      },
+      "dark": {
+        "name": "Dark Mode",
+        "isDark": true,
+        "primary": "#22c55e",
+        "primaryHover": "#16a34a",
+        "primaryLight": "#4ade80",
+        "primaryForeground": "#ffffff",
+        "accent": "#f59e0b",
+        "background": "#0f172a",
+        "surface": "#1e293b",
+        "foreground": "#f1f5f9",
+        "textSecondary": "#94a3b8",
+        "textMuted": "#64748b",
+        "border": "#334155",
+        "success": "#22c55e",
+        "warning": "#f59e0b",
+        "danger": "#ef4444",
+        "info": "#3b82f6",
+        "sidebar": {
+          "background": "#020617",
+          "foreground": "#f1f5f9",
+          "accent": "#22c55e"
+        },
+        "cardShadow": "0 1px 3px 0 rgb(0 0 0 / 0.3), 0 1px 2px -1px rgb(0 0 0 / 0.3)"
+      },
+      "ocean": {
+        "name": "Ocean Blue",
+        "isDark": false,
+        "primary": "#0ea5e9",
+        "primaryHover": "#0284c7",
+        "primaryLight": "#38bdf8",
+        "primaryForeground": "#ffffff",
+        "accent": "#06b6d4",
+        "background": "#f0f9ff",
+        "surface": "#e0f2fe",
+        "foreground": "#0c4a6e",
+        "textSecondary": "#0369a1",
+        "textMuted": "#0284c7",
+        "border": "#bae6fd",
+        "success": "#22c55e",
+        "warning": "#f59e0b",
+        "danger": "#ef4444",
+        "info": "#0ea5e9",
+        "sidebar": {
+          "background": "#0c4a6e",
+          "foreground": "#f0f9ff",
+          "accent": "#0ea5e9"
+        },
+        "cardShadow": "0 1px 3px 0 rgb(14 165 233 / 0.1), 0 1px 2px -1px rgb(14 165 233 / 0.1)"
+      },
+      "purple": {
+        "name": "Purple Violet",
+        "isDark": false,
+        "primary": "#8b5cf6",
+        "primaryHover": "#7c3aed",
+        "primaryLight": "#a78bfa",
+        "primaryForeground": "#ffffff",
+        "accent": "#c084fc",
+        "background": "#faf5ff",
+        "surface": "#f3e8ff",
+        "foreground": "#4c1d95",
+        "textSecondary": "#6b21a8",
+        "textMuted": "#9333ea",
+        "border": "#e9d5ff",
+        "success": "#22c55e",
+        "warning": "#f59e0b",
+        "danger": "#ef4444",
+        "info": "#8b5cf6",
+        "sidebar": {
+          "background": "#4c1d95",
+          "foreground": "#faf5ff",
+          "accent": "#8b5cf6"
+        },
+        "cardShadow": "0 1px 3px 0 rgb(139 92 246 / 0.1), 0 1px 2px -1px rgb(139 92 246 / 0.1)"
+      },
+      "sunset": {
+        "name": "Sunset Orange",
+        "isDark": false,
+        "primary": "#f97316",
+        "primaryHover": "#ea580c",
+        "primaryLight": "#fb923c",
+        "primaryForeground": "#ffffff",
+        "accent": "#f59e0b",
+        "background": "#fffbeb",
+        "surface": "#fef3c7",
+        "foreground": "#78350f",
+        "textSecondary": "#92400e",
+        "textMuted": "#b45309",
+        "border": "#fde68a",
+        "success": "#22c55e",
+        "warning": "#f59e0b",
+        "danger": "#ef4444",
+        "info": "#3b82f6",
+        "sidebar": {
+          "background": "#78350f",
+          "foreground": "#fffbeb",
+          "accent": "#f97316"
+        },
+        "cardShadow": "0 1px 3px 0 rgb(249 115 22 / 0.1), 0 1px 2px -1px rgb(249 115 22 / 0.1)"
+      }
+    }
+  },
+
+  "features": {
+    "enableAnalytics": true,
+    "enableStorefront": true,
+    "enableNotifications": true,
+    "enableProducts": true,
+    "enableOrders": true,
+    "enableContactSupport": true,
+    "enableSettings": true,
+    "enableDarkMode": true,
+    "enableMultiLanguage": false,
+    "enableMultiCurrency": false,
+    "enableRealTimeUpdates": true,
+    "enableFileUpload": true,
+    "enableImageOptimization": true,
+    "enableSeoOptimization": true
+  },
+
+  "navigation": {
+    "mainNav": [
+      { "name": "Home", "href": "/" },
+      { "name": "Sell on SellerHub", "href": "/sell" },
+      { "name": "About", "href": "/#about" },
+      { "name": "Contact", "href": "/contact" },
+      { "name": "FAQ", "href": "/#faq" }
+    ],
+    "dashboardNav": [
+      { "name": "Dashboard", "href": "/dashboard", "icon": "📊" },
+      { "name": "Products", "href": "/dashboard/products", "icon": "📦" },
+      { "name": "Orders", "href": "/dashboard/orders", "icon": "🛒" },
+      { "name": "Storefront", "href": "/dashboard/storefront", "icon": "🏪" },
+      { "name": "Analytics", "href": "/dashboard/analytics", "icon": "📈" },
+      { "name": "Notifications", "href": "/dashboard/notifications", "icon": "🔔" },
+      { "name": "Contact Support", "href": "/dashboard/contact-admin", "icon": "✉️" },
+      { "name": "Settings", "href": "/dashboard/settings", "icon": "⚙️" }
+    ],
+    "footerNav": [
+      { "name": "Home", "href": "/" },
+      { "name": "Sell on SellerHub", "href": "/sell" },
+      { "name": "Contact", "href": "/contact" },
+      { "name": "FAQ", "href": "/#faq" }
+    ],
+    "legalLinks": [
+      { "name": "Privacy Policy", "href": "/privacy-policy" },
+      { "name": "Terms of Service", "href": "/terms-of-service" }
+    ]
+  },
+
+  "stats": [
+    {
+      "value": "10K+",
+      "label": "Active Sellers",
+      "description": "Join thousands of successful entrepreneurs"
+    },
+    {
+      "value": "500K+",
+      "label": "Products Listed",
+      "description": "Millions of products available on our platform"
+    },
+    {
+      "value": "99.9%",
+      "label": "Uptime",
+      "description": "Reliable service you can count on"
+    }
+  ],
+
+  "contact": {
+    "email": "support@sellerhub.com",
+    "phone": "+234 123 456 7890",
+    "address": "Lagos, Nigeria",
+    "supportHours": "Mon-Fri 9:00 AM - 6:00 PM WAT"
+  },
+
+  "socialLinks": [
+    { "name": "Twitter", "href": "https://twitter.com/sellerhub", "icon": "twitter" },
+    { "name": "Facebook", "href": "https://facebook.com/sellerhub", "icon": "facebook" },
+    { "name": "Instagram", "href": "https://instagram.com/sellerhub", "icon": "instagram" },
+    { "name": "LinkedIn", "href": "https://linkedin.com/company/sellerhub", "icon": "linkedin" }
+  ],
+
+  "seo": {
+    "title": "SellerHub - Grow Your Business with SellerHub",
+    "description": "The complete e-commerce platform for Nigerian sellers.",
+    "keywords": ["ecommerce", "nigeria", "online marketplace", "sell online"],
+    "ogImage": "/og-image.png",
+    "twitterHandle": "@sellerhub",
+    "siteUrl": "https://sellerhub.com"
+  },
+
+  "texts": {
+    "hero": {
+      "badge": "🛍️ E-commerce Seller Platform",
+      "cta": "Start Selling Free",
+      "secondaryCta": "Learn More"
+    },
+    "footer": {
+      "description": "The complete e-commerce platform for Nigerian sellers. Manage your products, track orders, and grow your business with powerful tools and analytics."
+    }
+  }
+}
