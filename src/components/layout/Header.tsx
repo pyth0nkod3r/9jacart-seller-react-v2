@@ -50,7 +50,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
           {/* Notifications */}
           {features.enableNotifications && (
             <Link
-              to="/notifications"
+              to="/dashboard/notifications"
               className="p-2 rounded-full hover:bg-secondary transition-colors relative"
             >
               <Bell className="w-5 h-5 text-muted-foreground" />
@@ -94,7 +94,7 @@ export default function Header({ onMenuClick }: HeaderProps) {
                   <div className="py-1">
                     {features.enableSettings && (
                       <Link
-                        to="/settings"
+                        to="/dashboard/settings"
                         onClick={() => setIsProfileOpen(false)}
                         className="flex items-center px-4 py-2 text-sm text-foreground hover:bg-secondary"
                       >

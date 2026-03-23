@@ -1,10 +1,10 @@
 /**
  * Comprehensive Mock Data
- * 
+ *
  * This file contains all mock data for the application.
  * All API calls are replaced with this mock data.
- * 
- * Images are sourced from Unsplash (free to use).
+ *
+ * Mock data is sourced from the Bootstrap version (public/sellerhub-bootstrap/js/app.js).
  */
 
 import type { Product } from "@/types/product.types";
@@ -19,68 +19,59 @@ export const delay = (ms = 400) =>
   new Promise<void>((resolve) => setTimeout(resolve, ms));
 
 // ---------------------------------------------------------------------------
-// Image URLs - Using Unsplash (free to use)
+// Image URLs (from Bootstrap version)
 // ---------------------------------------------------------------------------
 export const IMAGES = {
-  // Product images - Electronics
   phones: [
     "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?w=400&h=400&fit=crop",
     "https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?w=400&h=400&fit=crop",
     "https://images.unsplash.com/photo-1585060544812-6b45742d762f?w=400&h=400&fit=crop",
     "https://images.unsplash.com/photo-1574944985070-8f3ebc6b79d2?w=400&h=400&fit=crop",
   ],
-  // Accessories
   accessories: [
     "https://images.unsplash.com/photo-1590658268037-6bf12165a8df?w=400&h=400&fit=crop",
     "https://images.unsplash.com/photo-1608156639585-b3a7a6e98d0a?w=400&h=400&fit=crop",
     "https://images.unsplash.com/photo-1625772452859-1c03d5bf1137?w=400&h=400&fit=crop",
     "https://images.unsplash.com/photo-1601524909162-ae8725290836?w=400&h=400&fit=crop",
   ],
-  // Fashion
   fashion: [
     "https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=400&h=400&fit=crop",
     "https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&h=400&fit=crop",
     "https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=400&h=400&fit=crop",
     "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop",
   ],
-  // Home & Living
   home: [
     "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=400&h=400&fit=crop",
     "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400&h=400&fit=crop",
     "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?w=400&h=400&fit=crop",
     "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop",
   ],
-  // Beauty
   beauty: [
     "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=400&h=400&fit=crop",
     "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=400&fit=crop",
     "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=400&fit=crop",
     "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=400&fit=crop",
   ],
-  // Profile avatars
   avatars: [
-    "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&h=200&fit=crop",
+    "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
     "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200&h=200&fit=crop",
     "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&h=200&fit=crop",
     "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&h=200&fit=crop",
     "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200&h=200&fit=crop",
     "https://images.unsplash.com/photo-1527980965255-d3b416303d12?w=200&h=200&fit=crop",
   ],
-  // Business logos
   logos: [
-    "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=200&h=200&fit=crop",
+    "https://images.unsplash.com/photo-1572025442646-866d16c84a54?w=200&h=200&fit=crop",
     "https://images.unsplash.com/photo-1471341971476-ae15ff5dd4ea?w=200&h=200&fit=crop",
     "https://images.unsplash.com/photo-1541562232579-512a21360f5a?w=200&h=200&fit=crop",
   ],
-  // Hero/Dashboard images
   hero: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
   dashboard: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-  // Placeholder
   placeholder: "https://images.unsplash.com/photo-1586864387967-d02ef85d93e8?w=400&h=400&fit=crop",
 };
 
 // ---------------------------------------------------------------------------
-// Vendor / Auth
+// Vendor / Auth (Bootstrap: getUser() + CONFIG)
 // ---------------------------------------------------------------------------
 export const MOCK_TOKEN = "mock-jwt-token-seller-2024";
 export const MOCK_VENDOR_ID = "vendor-001";
@@ -88,21 +79,21 @@ export const MOCK_VENDOR_ID = "vendor-001";
 export let mockVendorProfile: VendorProfile = {
   vendorId: MOCK_VENDOR_ID,
   account: {
-    emailAddress: "vendor@example.com",
-    fullName: "Chukwuemeka Adeyemi",
+    emailAddress: "seller@sellerhub.com",
+    fullName: "Demo Seller",
     phoneNumber: "+234 801 234 5678",
-    profileImage: IMAGES.avatars[0],
+    profileImage: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop",
   },
   accountInfo: {
-    accountName: "Chukwuemeka Adeyemi",
+    accountName: "Demo Seller",
     accountNumber: "0123456789",
     bank: "First Bank of Nigeria",
   },
   business: {
-    businessName: "Adeyemi Electronics Store",
-    businessCategory: "Electronics",
+    businessName: "SellerHub",
+    businessCategory: "Electronics & Technology",
     businessRegNumber: "RC-123456",
-    storeName: "Adeyemi Tech Hub",
+    storeName: "SellerHub",
     businessAddress: "12 Broad Street, Lagos Island, Lagos, Nigeria",
     taxIdNumber: "TIN-987654321",
     idDocument: "",
@@ -113,26 +104,26 @@ export let mockVendorProfile: VendorProfile = {
   updatedAt: "2024-06-15T12:30:00.000Z",
 };
 
-export let mockLogoUrl: string | null = IMAGES.logos[0];
+export let mockLogoUrl: string | null = "https://images.unsplash.com/photo-1572025442646-866d16c84a54?w=200&h=200&fit=crop";
 
 // ---------------------------------------------------------------------------
-// Products
+// Products (exact data from Bootstrap MOCK_PRODUCTS)
 // ---------------------------------------------------------------------------
 export let mockProducts: Product[] = [
   {
     productId: "prod-001",
-    productName: "Samsung Galaxy S24 Ultra",
+    productName: "Wireless Bluetooth Headphones",
     categoryId: "cat-electronics",
     categoryName: "Electronics",
-    productDescription: " flagship smartphone with 200MP camera, S Pen support, and AI features. 6.8\" Dynamic AMOLED display with 120Hz refresh rate.",
-    productTags: ["samsung", "smartphone", "android", "flagship"],
-    unitPrice: "750000",
-    discountType: "percentage",
-    discountValue: "5",
-    discountPrice: "712500",
-    stock: "15",
-    minStock: "5",
-    images: [IMAGES.phones[0], IMAGES.phones[1]],
+    productDescription: "Premium wireless headphones with active noise cancellation and 30-hour battery life.",
+    productTags: ["headphones", "wireless", "bluetooth", "audio"],
+    unitPrice: "45000",
+    discountType: "none",
+    discountValue: "0",
+    discountPrice: "45000",
+    stock: "150",
+    minStock: "10",
+    images: ["https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop"],
     isActive: true,
     vendorId: MOCK_VENDOR_ID,
     vendorStorefrontUrl: `https://marketplace.com/store/${MOCK_VENDOR_ID}`,
@@ -141,18 +132,18 @@ export let mockProducts: Product[] = [
   },
   {
     productId: "prod-002",
-    productName: "iPhone 15 Pro Max",
+    productName: "Smart Watch Pro",
     categoryId: "cat-electronics",
     categoryName: "Electronics",
-    productDescription: "Apple's most powerful iPhone with A17 Pro chip, titanium design, and advanced camera system with 5x optical zoom.",
-    productTags: ["apple", "iphone", "smartphone", "flagship"],
-    unitPrice: "850000",
+    productDescription: "Advanced fitness tracking with heart rate monitor and GPS.",
+    productTags: ["smartwatch", "fitness", "electronics", "wearable"],
+    unitPrice: "89000",
     discountType: "none",
     discountValue: "0",
-    discountPrice: "850000",
-    stock: "8",
-    minStock: "3",
-    images: [IMAGES.phones[1]],
+    discountPrice: "89000",
+    stock: "75",
+    minStock: "10",
+    images: ["https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop"],
     isActive: true,
     vendorId: MOCK_VENDOR_ID,
     vendorStorefrontUrl: `https://marketplace.com/store/${MOCK_VENDOR_ID}`,
@@ -161,18 +152,18 @@ export let mockProducts: Product[] = [
   },
   {
     productId: "prod-003",
-    productName: "Sony WH-1000XM5 Headphones",
-    categoryId: "cat-electronics",
-    categoryName: "Electronics",
-    productDescription: "Premium wireless noise-canceling headphones with 30-hour battery life, multipoint connection, and crystal-clear calls.",
-    productTags: ["sony", "headphones", "audio", "wireless"],
-    unitPrice: "185000",
-    discountType: "fixed",
-    discountValue: "15000",
-    discountPrice: "170000",
-    stock: "3",
-    minStock: "5",
-    images: [IMAGES.accessories[0]],
+    productName: "Leather Crossbody Bag",
+    categoryId: "cat-fashion",
+    categoryName: "Fashion",
+    productDescription: "Handcrafted genuine leather bag perfect for everyday use.",
+    productTags: ["bag", "leather", "fashion", "crossbody"],
+    unitPrice: "35000",
+    discountType: "none",
+    discountValue: "0",
+    discountPrice: "35000",
+    stock: "45",
+    minStock: "10",
+    images: ["https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=300&fit=crop"],
     isActive: true,
     vendorId: MOCK_VENDOR_ID,
     vendorStorefrontUrl: `https://marketplace.com/store/${MOCK_VENDOR_ID}`,
@@ -181,18 +172,18 @@ export let mockProducts: Product[] = [
   },
   {
     productId: "prod-004",
-    productName: "Apple MacBook Pro 14\"",
-    categoryId: "cat-electronics",
-    categoryName: "Electronics",
-    productDescription: "M3 Pro chip, 18GB RAM, 512GB SSD. Stunning Liquid Retina XDR display with ProMotion technology.",
-    productTags: ["apple", "laptop", "macbook", "professional"],
-    unitPrice: "1450000",
+    productName: "Organic Green Tea Set",
+    categoryId: "cat-food",
+    categoryName: "Food & Beverages",
+    productDescription: "Premium organic green tea collection with 6 varieties.",
+    productTags: ["tea", "organic", "food", "beverages"],
+    unitPrice: "12500",
     discountType: "none",
     discountValue: "0",
-    discountPrice: "1450000",
-    stock: "4",
-    minStock: "2",
-    images: [IMAGES.phones[2]],
+    discountPrice: "12500",
+    stock: "200",
+    minStock: "20",
+    images: ["https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop"],
     isActive: true,
     vendorId: MOCK_VENDOR_ID,
     vendorStorefrontUrl: `https://marketplace.com/store/${MOCK_VENDOR_ID}`,
@@ -201,18 +192,18 @@ export let mockProducts: Product[] = [
   },
   {
     productId: "prod-005",
-    productName: "Logitech MX Master 3S",
-    categoryId: "cat-accessories",
-    categoryName: "Accessories",
-    productDescription: "Advanced wireless mouse with MagSpeed scrolling, 8K DPI sensor, and USB-C quick charging. Works on any surface.",
-    productTags: ["logitech", "mouse", "wireless", "productivity"],
-    unitPrice: "55000",
-    discountType: "percentage",
-    discountValue: "10",
-    discountPrice: "49500",
-    stock: "25",
+    productName: "Minimalist Desk Lamp",
+    categoryId: "cat-home",
+    categoryName: "Home & Living",
+    productDescription: "Modern LED desk lamp with adjustable brightness and color temperature.",
+    productTags: ["lamp", "desk", "home", "lighting"],
+    unitPrice: "22000",
+    discountType: "none",
+    discountValue: "0",
+    discountPrice: "22000",
+    stock: "89",
     minStock: "10",
-    images: [IMAGES.accessories[1]],
+    images: ["https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400&h=300&fit=crop"],
     isActive: true,
     vendorId: MOCK_VENDOR_ID,
     vendorStorefrontUrl: `https://marketplace.com/store/${MOCK_VENDOR_ID}`,
@@ -221,19 +212,19 @@ export let mockProducts: Product[] = [
   },
   {
     productId: "prod-006",
-    productName: "JBL Flip 6 Speaker",
-    categoryId: "cat-electronics",
-    categoryName: "Electronics",
-    productDescription: "Portable Bluetooth speaker with powerful bass, IP67 waterproof rating, and 12 hours of playtime.",
-    productTags: ["jbl", "speaker", "bluetooth", "portable"],
-    unitPrice: "45000",
+    productName: "Cotton T-Shirt Pack",
+    categoryId: "cat-fashion",
+    categoryName: "Fashion",
+    productDescription: "Premium cotton t-shirts in 5 different colors.",
+    productTags: ["tshirt", "cotton", "fashion", "clothing"],
+    unitPrice: "18500",
     discountType: "none",
     discountValue: "0",
-    discountPrice: "45000",
-    stock: "0",
-    minStock: "5",
-    images: [IMAGES.accessories[2]],
-    isActive: false,
+    discountPrice: "18500",
+    stock: "300",
+    minStock: "20",
+    images: ["https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop"],
+    isActive: true,
     vendorId: MOCK_VENDOR_ID,
     vendorStorefrontUrl: `https://marketplace.com/store/${MOCK_VENDOR_ID}`,
     createdAt: "2024-05-10T14:00:00.000Z",
@@ -241,18 +232,18 @@ export let mockProducts: Product[] = [
   },
   {
     productId: "prod-007",
-    productName: "Leather Laptop Bag",
-    categoryId: "cat-accessories",
-    categoryName: "Accessories",
-    productDescription: "Premium genuine leather laptop bag with padded compartment for 15.6\" laptops, multiple pockets, and adjustable strap.",
-    productTags: ["bag", "leather", "laptop", "premium"],
-    unitPrice: "35000",
-    discountType: "percentage",
-    discountValue: "15",
-    discountPrice: "29750",
-    stock: "12",
-    minStock: "3",
-    images: [IMAGES.accessories[3]],
+    productName: "Portable Power Bank",
+    categoryId: "cat-electronics",
+    categoryName: "Electronics",
+    productDescription: "20000mAh power bank with fast charging support.",
+    productTags: ["powerbank", "charger", "electronics", "portable"],
+    unitPrice: "15500",
+    discountType: "none",
+    discountValue: "0",
+    discountPrice: "15500",
+    stock: "120",
+    minStock: "15",
+    images: ["https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=400&h=300&fit=crop"],
     isActive: true,
     vendorId: MOCK_VENDOR_ID,
     vendorStorefrontUrl: `https://marketplace.com/store/${MOCK_VENDOR_ID}`,
@@ -261,18 +252,18 @@ export let mockProducts: Product[] = [
   },
   {
     productId: "prod-008",
-    productName: "Nike Air Max 270",
-    categoryId: "cat-fashion",
-    categoryName: "Fashion",
-    productDescription: "Comfortable lifestyle sneakers with Max Air unit for cushioning. Available in multiple colors.",
-    productTags: ["nike", "sneakers", "shoes", "fashion"],
-    unitPrice: "65000",
+    productName: "Yoga Mat Premium",
+    categoryId: "cat-sports",
+    categoryName: "Sports & Fitness",
+    productDescription: "Extra thick yoga mat with carrying strap.",
+    productTags: ["yoga", "mat", "fitness", "sports"],
+    unitPrice: "9500",
     discountType: "none",
     discountValue: "0",
-    discountPrice: "65000",
-    stock: "20",
-    minStock: "5",
-    images: [IMAGES.fashion[0]],
+    discountPrice: "9500",
+    stock: "85",
+    minStock: "10",
+    images: ["https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=400&h=300&fit=crop"],
     isActive: true,
     vendorId: MOCK_VENDOR_ID,
     vendorStorefrontUrl: `https://marketplace.com/store/${MOCK_VENDOR_ID}`,
@@ -281,18 +272,18 @@ export let mockProducts: Product[] = [
   },
   {
     productId: "prod-009",
-    productName: "Dyson V15 Detect",
+    productName: "Ceramic Coffee Mug Set",
     categoryId: "cat-home",
     categoryName: "Home & Living",
-    productDescription: "Cordless vacuum cleaner with laser dust detection, LCD screen showing real-time dust analysis, and 60 minutes runtime.",
-    productTags: ["dyson", "vacuum", "home", "technology"],
-    unitPrice: "380000",
-    discountType: "fixed",
-    discountValue: "30000",
-    discountPrice: "350000",
-    stock: "6",
-    minStock: "2",
-    images: [IMAGES.home[0]],
+    productDescription: "Set of 6 hand-painted ceramic mugs.",
+    productTags: ["mug", "ceramic", "home", "kitchen"],
+    unitPrice: "14000",
+    discountType: "none",
+    discountValue: "0",
+    discountPrice: "14000",
+    stock: "65",
+    minStock: "10",
+    images: ["https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=300&fit=crop"],
     isActive: true,
     vendorId: MOCK_VENDOR_ID,
     vendorStorefrontUrl: `https://marketplace.com/store/${MOCK_VENDOR_ID}`,
@@ -301,18 +292,18 @@ export let mockProducts: Product[] = [
   },
   {
     productId: "prod-010",
-    productName: "La Mer Moisturizing Cream",
+    productName: "Natural Skincare Set",
     categoryId: "cat-beauty",
     categoryName: "Beauty",
-    productDescription: "Luxury face cream with cell-renewing Miracle Broth™. Deeply hydrates and improves skin texture.",
-    productTags: ["lamer", "skincare", "luxury", "beauty"],
-    unitPrice: "95000",
+    productDescription: "Organic skincare routine with cleanser, toner, and moisturizer.",
+    productTags: ["skincare", "organic", "beauty", "natural"],
+    unitPrice: "28500",
     discountType: "none",
     discountValue: "0",
-    discountPrice: "95000",
-    stock: "10",
-    minStock: "3",
-    images: [IMAGES.beauty[0]],
+    discountPrice: "28500",
+    stock: "95",
+    minStock: "10",
+    images: ["https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=300&fit=crop"],
     isActive: true,
     vendorId: MOCK_VENDOR_ID,
     vendorStorefrontUrl: `https://marketplace.com/store/${MOCK_VENDOR_ID}`,
@@ -322,91 +313,21 @@ export let mockProducts: Product[] = [
 ];
 
 // ---------------------------------------------------------------------------
-// Orders
+// Orders (exact data from Bootstrap MOCK_ORDERS)
 // ---------------------------------------------------------------------------
 export const mockOrders: Order[] = [
   {
-    orderNo: "ORD-2024-0001",
-    totalAmount: 712500,
-    status: "delivered",
-    paymentMethod: "card",
-    paymentStatus: "paid",
-    customerName: "Amaka Okafor",
-    customerEmail: "amaka.okafor@email.com",
-    customerPhone: "+234 802 345 6789",
-    shippingAddress: "15 Adeniran Ogunsanya Street, Surulere, Lagos",
-    orderEarning: 675000,
-    createdAt: "2024-06-01T14:22:00.000Z",
-    totalItemsCount: 1,
-  },
-  {
-    orderNo: "ORD-2024-0002",
-    totalAmount: 234500,
-    status: "pending",
-    paymentMethod: "transfer",
-    paymentStatus: "pending",
-    customerName: "Babatunde Adeola",
-    customerEmail: "babs.adeola@email.com",
-    customerPhone: "+234 803 456 7890",
-    shippingAddress: "42 Allen Avenue, Ikeja, Lagos",
-    orderEarning: 220000,
-    createdAt: "2024-06-05T09:10:00.000Z",
-    totalItemsCount: 2,
-  },
-  {
-    orderNo: "ORD-2024-0003",
-    totalAmount: 170000,
+    orderNo: "ORD-2024-0008",
+    totalAmount: 29750,
     status: "processing",
     paymentMethod: "card",
     paymentStatus: "paid",
-    customerName: "Chiamaka Eze",
-    customerEmail: "chia.eze@email.com",
-    customerPhone: "+234 804 567 8901",
-    shippingAddress: "8 GRA Phase 2, Port Harcourt, Rivers",
-    orderEarning: 160000,
-    createdAt: "2024-06-10T11:45:00.000Z",
-    totalItemsCount: 1,
-  },
-  {
-    orderNo: "ORD-2024-0004",
-    totalAmount: 55000,
-    status: "cancelled",
-    paymentMethod: "wallet",
-    paymentStatus: "refunded",
-    customerName: "David Nwosu",
-    customerEmail: "david.nwosu@email.com",
-    customerPhone: "+234 805 678 9012",
-    shippingAddress: "33 Independence Layout, Enugu",
-    orderEarning: 0,
-    createdAt: "2024-06-11T16:00:00.000Z",
-    totalItemsCount: 1,
-  },
-  {
-    orderNo: "ORD-2024-0005",
-    totalAmount: 99250,
-    status: "shipped",
-    paymentMethod: "card",
-    paymentStatus: "paid",
-    customerName: "Emeka Obi",
-    customerEmail: "emeka.obi@email.com",
-    customerPhone: "+234 806 789 0123",
-    shippingAddress: "7 Trans Amadi Industrial Layout, Port Harcourt",
-    orderEarning: 92000,
-    createdAt: "2024-06-14T08:30:00.000Z",
-    totalItemsCount: 2,
-  },
-  {
-    orderNo: "ORD-2024-0006",
-    totalAmount: 1450000,
-    status: "pending",
-    paymentMethod: "transfer",
-    paymentStatus: "pending",
-    customerName: "Funke Adebayo",
-    customerEmail: "funke.adebayo@email.com",
-    customerPhone: "+234 807 890 1234",
-    shippingAddress: "22 Banana Island, Ikoyi, Lagos",
-    orderEarning: 1375000,
-    createdAt: "2024-06-15T10:15:00.000Z",
+    customerName: "Emeka Okafor",
+    customerEmail: "emeka@email.com",
+    customerPhone: "+234 802 345 6789",
+    shippingAddress: "15 Adeniran Ogunsanya, Surulere, Lagos",
+    orderEarning: 27000,
+    createdAt: "2024-06-17T09:30:00.000Z",
     totalItemsCount: 1,
   },
   {
@@ -415,145 +336,231 @@ export const mockOrders: Order[] = [
     status: "delivered",
     paymentMethod: "card",
     paymentStatus: "paid",
-    customerName: "Grace Okonkwo",
-    customerEmail: "grace.okonkwo@email.com",
-    customerPhone: "+234 808 901 2345",
-    shippingAddress: "5 Maitama District, Abuja",
+    customerName: "Amina Yusuf",
+    customerEmail: "amina@email.com",
+    customerPhone: "+234 803 456 7890",
+    shippingAddress: "42 Ahmadu Bello Way, Victoria Island, Lagos",
     orderEarning: 355000,
     createdAt: "2024-06-16T13:45:00.000Z",
+    totalItemsCount: 3,
+  },
+  {
+    orderNo: "ORD-2024-0006",
+    totalAmount: 1450000,
+    status: "pending",
+    paymentMethod: "transfer",
+    paymentStatus: "pending",
+    customerName: "Chidi Nnamdi",
+    customerEmail: "chidi@email.com",
+    customerPhone: "+234 804 567 8901",
+    shippingAddress: "8 Hospital Road, GRA, Port Harcourt",
+    orderEarning: 1375000,
+    createdAt: "2024-06-15T10:15:00.000Z",
+    totalItemsCount: 7,
+  },
+  {
+    orderNo: "ORD-2024-0005",
+    totalAmount: 99250,
+    status: "shipped",
+    paymentMethod: "card",
+    paymentStatus: "paid",
+    customerName: "Funke Adeyemi",
+    customerEmail: "funke@email.com",
+    customerPhone: "+234 805 678 9012",
+    shippingAddress: "23 Marina Road, Calabar",
+    orderEarning: 92000,
+    createdAt: "2024-06-14T08:30:00.000Z",
+    totalItemsCount: 5,
+  },
+  {
+    orderNo: "ORD-2024-0004",
+    totalAmount: 55000,
+    status: "cancelled",
+    paymentMethod: "wallet",
+    paymentStatus: "refunded",
+    customerName: "Ibrahim Musa",
+    customerEmail: "ibrahim@email.com",
+    customerPhone: "+234 806 789 0123",
+    shippingAddress: "5 Kano Road, Kaduna",
+    orderEarning: 0,
+    createdAt: "2024-06-11T16:00:00.000Z",
+    totalItemsCount: 2,
+  },
+  {
+    orderNo: "ORD-2024-0003",
+    totalAmount: 28500,
+    status: "delivered",
+    paymentMethod: "card",
+    paymentStatus: "paid",
+    customerName: "Ngozi Eze",
+    customerEmail: "ngozi@email.com",
+    customerPhone: "+234 807 890 1234",
+    shippingAddress: "12 Ogui Road, Enugu",
+    orderEarning: 26000,
+    createdAt: "2024-06-10T11:45:00.000Z",
     totalItemsCount: 1,
   },
   {
-    orderNo: "ORD-2024-0008",
-    totalAmount: 29750,
-    status: "processing",
+    orderNo: "ORD-2024-0002",
+    totalAmount: 66000,
+    status: "delivered",
     paymentMethod: "card",
     paymentStatus: "paid",
-    customerName: "Henry Eromosele",
-    customerEmail: "henry.ero@email.com",
+    customerName: "Tunde Bakare",
+    customerEmail: "tunde@email.com",
+    customerPhone: "+234 808 901 2345",
+    shippingAddress: "78 Allen Avenue, Ikeja, Lagos",
+    orderEarning: 60000,
+    createdAt: "2024-06-08T09:30:00.000Z",
+    totalItemsCount: 3,
+  },
+  {
+    orderNo: "ORD-2024-0001",
+    totalAmount: 104500,
+    status: "delivered",
+    paymentMethod: "card",
+    paymentStatus: "paid",
+    customerName: "Aisha Mohammed",
+    customerEmail: "aisha@email.com",
     customerPhone: "+234 809 012 3456",
-    shippingAddress: "18 Sapele Road, Benin City, Edo",
-    orderEarning: 27000,
-    createdAt: "2024-06-17T09:30:00.000Z",
-    totalItemsCount: 1,
+    shippingAddress: "33 Wuse 2, Abuja",
+    orderEarning: 96000,
+    createdAt: "2024-06-05T14:22:00.000Z",
+    totalItemsCount: 2,
   },
 ];
 
 export const mockOrdersMetrics: OrdersMetrics = {
   totalOrders: 8,
-  deliveredOrders: 2,
+  deliveredOrders: 4,
   returnedOrders: 0,
   cancelledOrders: 1,
-  pendingOrders: 2,
+  pendingOrders: 1,
 };
 
 export const mockOrderItems: Record<string, OrderItem[]> = {
-  "ORD-2024-0001": [
-    { 
-      productId: "prod-001", 
-      productName: "Samsung Galaxy S24 Ultra", 
-      quantity: 1, 
-      price: 712500, 
-      image: IMAGES.phones[0],
-      variant: "Phantom Black 256GB"
-    },
-  ],
-  "ORD-2024-0002": [
-    { 
-      productId: "prod-003", 
-      productName: "Sony WH-1000XM5 Headphones", 
-      quantity: 1, 
-      price: 170000, 
-      image: IMAGES.accessories[0],
-      variant: "Silver"
-    },
-    { 
-      productId: "prod-005", 
-      productName: "Logitech MX Master 3S", 
-      quantity: 1, 
-      price: 49500, 
-      image: IMAGES.accessories[1],
-      variant: "Graphite"
-    },
-  ],
-  "ORD-2024-0003": [
-    { 
-      productId: "prod-003", 
-      productName: "Sony WH-1000XM5 Headphones", 
-      quantity: 1, 
-      price: 170000, 
-      image: IMAGES.accessories[0],
-      variant: "Black"
-    },
-  ],
-  "ORD-2024-0004": [
-    { 
-      productId: "prod-005", 
-      productName: "Logitech MX Master 3S", 
-      quantity: 1, 
-      price: 55000, 
-      image: IMAGES.accessories[1],
-      variant: "Pale Gray"
-    },
-  ],
-  "ORD-2024-0005": [
-    { 
-      productId: "prod-007", 
-      productName: "Leather Laptop Bag", 
-      quantity: 2, 
-      price: 29750, 
-      image: IMAGES.accessories[3],
-      variant: "Brown"
-    },
-    { 
-      productId: "prod-005", 
-      productName: "Logitech MX Master 3S", 
-      quantity: 1, 
-      price: 49500, 
-      image: IMAGES.accessories[1],
-      variant: "Graphite"
-    },
-  ],
-  "ORD-2024-0006": [
-    { 
-      productId: "prod-004", 
-      productName: "Apple MacBook Pro 14\"", 
-      quantity: 1, 
-      price: 1450000, 
-      image: IMAGES.phones[2],
-      variant: "Space Black M3 Pro"
+  "ORD-2024-0008": [
+    {
+      productId: "prod-001",
+      productName: "Wireless Bluetooth Headphones",
+      quantity: 1,
+      price: 45000,
+      image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop",
+      variant: "Black",
     },
   ],
   "ORD-2024-0007": [
-    { 
-      productId: "prod-009", 
-      productName: "Dyson V15 Detect", 
-      quantity: 1, 
-      price: 350000, 
-      image: IMAGES.home[0],
-      variant: "Yellow/Nickel"
+    {
+      productId: "prod-003",
+      productName: "Leather Crossbody Bag",
+      quantity: 2,
+      price: 70000,
+      image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=300&fit=crop",
+      variant: "Brown",
+    },
+    {
+      productId: "prod-006",
+      productName: "Cotton T-Shirt Pack",
+      quantity: 1,
+      price: 18500,
+      image: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop",
+      variant: "Assorted",
     },
   ],
-  "ORD-2024-0008": [
-    { 
-      productId: "prod-007", 
-      productName: "Leather Laptop Bag", 
-      quantity: 1, 
-      price: 29750, 
-      image: IMAGES.accessories[3],
-      variant: "Black"
+  "ORD-2024-0006": [
+    {
+      productId: "prod-002",
+      productName: "Smart Watch Pro",
+      quantity: 5,
+      price: 445000,
+      image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop",
+      variant: "Black",
+    },
+    {
+      productId: "prod-007",
+      productName: "Portable Power Bank",
+      quantity: 2,
+      price: 31000,
+      image: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=400&h=300&fit=crop",
+      variant: "White",
+    },
+  ],
+  "ORD-2024-0005": [
+    {
+      productId: "prod-004",
+      productName: "Organic Green Tea Set",
+      quantity: 3,
+      price: 37500,
+      image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop",
+      variant: "Assorted",
+    },
+    {
+      productId: "prod-009",
+      productName: "Ceramic Coffee Mug Set",
+      quantity: 2,
+      price: 28000,
+      image: "https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?w=400&h=300&fit=crop",
+      variant: "Hand-painted",
+    },
+  ],
+  "ORD-2024-0004": [
+    {
+      productId: "prod-008",
+      productName: "Yoga Mat Premium",
+      quantity: 2,
+      price: 19000,
+      image: "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=400&h=300&fit=crop",
+      variant: "Purple",
+    },
+  ],
+  "ORD-2024-0003": [
+    {
+      productId: "prod-010",
+      productName: "Natural Skincare Set",
+      quantity: 1,
+      price: 28500,
+      image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=300&fit=crop",
+      variant: "Standard",
+    },
+  ],
+  "ORD-2024-0002": [
+    {
+      productId: "prod-005",
+      productName: "Minimalist Desk Lamp",
+      quantity: 3,
+      price: 66000,
+      image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400&h=300&fit=crop",
+      variant: "Matte Black",
+    },
+  ],
+  "ORD-2024-0001": [
+    {
+      productId: "prod-002",
+      productName: "Smart Watch Pro",
+      quantity: 1,
+      price: 89000,
+      image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop",
+      variant: "Silver",
+    },
+    {
+      productId: "prod-007",
+      productName: "Portable Power Bank",
+      quantity: 1,
+      price: 15500,
+      image: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=400&h=300&fit=crop",
+      variant: "Black",
     },
   ],
 };
 
 // ---------------------------------------------------------------------------
-// Notifications
+// Notifications (exact data from Bootstrap MOCK_NOTIFICATIONS)
 // ---------------------------------------------------------------------------
 export let mockNotifications: NotificationItem[] = [
   {
     id: "notif-001",
     title: "New Order Received",
-    message: "You have received a new order ORD-2024-0008 from Henry Eromosele for ₦29,750.",
+    message: "Order #ORD-2024-0008 has been placed by Emeka Okafor",
     createdAt: "2024-06-17T09:35:00.000Z",
     type: "order",
     isRead: false,
@@ -561,94 +568,100 @@ export let mockNotifications: NotificationItem[] = [
   {
     id: "notif-002",
     title: "Payment Confirmed",
-    message: "Payment of ₦380,000 for order ORD-2024-0007 has been confirmed and credited to your wallet.",
+    message: "Payment of ₦380,000 for order #ORD-2024-0007 has been confirmed",
     createdAt: "2024-06-16T14:00:00.000Z",
     type: "payment",
     isRead: false,
   },
   {
     id: "notif-003",
-    title: "New Order Received",
-    message: "You have received a new order ORD-2024-0006 from Funke Adebayo for ₦1,450,000.",
-    createdAt: "2024-06-15T10:20:00.000Z",
-    type: "order",
+    title: "Low Stock Alert",
+    message: "Leather Crossbody Bag is running low on stock (45 units remaining)",
+    createdAt: "2024-06-14T10:00:00.000Z",
+    type: "product",
     isRead: false,
   },
   {
     id: "notif-004",
-    title: "Low Stock Alert",
-    message: "Sony WH-1000XM5 Headphones is running low on stock (3 remaining). Consider restocking soon.",
-    createdAt: "2024-06-14T10:00:00.000Z",
-    type: "product",
-    isRead: true,
-  },
-  {
-    id: "notif-005",
-    title: "Order Shipped",
-    message: "Order ORD-2024-0005 has been shipped and is on its way to Emeka Obi.",
+    title: "Order Delivered",
+    message: "Order #ORD-2024-0003 has been successfully delivered",
     createdAt: "2024-06-14T09:00:00.000Z",
     type: "order",
     isRead: true,
   },
   {
-    id: "notif-006",
-    title: "Product Deactivated",
-    message: "JBL Flip 6 Speaker has been automatically deactivated due to being out of stock.",
+    id: "notif-005",
+    title: "Profile Updated",
+    message: "Your store profile has been successfully updated",
     createdAt: "2024-06-13T16:00:00.000Z",
-    type: "product",
+    type: "system",
+    isRead: true,
+  },
+  {
+    id: "notif-006",
+    title: "Payout Processed",
+    message: "Your weekly payout of ₦520,000 has been processed",
+    createdAt: "2024-06-12T10:00:00.000Z",
+    type: "payment",
     isRead: true,
   },
   {
     id: "notif-007",
-    title: "Order Delivered",
-    message: "Order ORD-2024-0001 has been successfully delivered to Amaka Okafor.",
-    createdAt: "2024-06-02T11:30:00.000Z",
-    type: "order",
+    title: "Product Approved",
+    message: "Your product 'Natural Skincare Set' has been approved for sale",
+    createdAt: "2024-06-11T09:00:00.000Z",
+    type: "product",
     isRead: true,
   },
   {
     id: "notif-008",
-    title: "Payment Received",
-    message: "Payment of ₦712,500 for order ORD-2024-0001 has been confirmed.",
-    createdAt: "2024-06-01T14:45:00.000Z",
-    type: "payment",
+    title: "Order Cancelled",
+    message: "Order #ORD-2024-0004 has been cancelled by customer",
+    createdAt: "2024-06-10T11:30:00.000Z",
+    type: "order",
     isRead: true,
   },
 ];
 
 // ---------------------------------------------------------------------------
-// Categories
+// Categories (matching Bootstrap CATEGORIES)
 // ---------------------------------------------------------------------------
 export const mockCategories: Category[] = [
-  { 
-    id: "cat-electronics", 
-    categoryName: "Electronics", 
+  {
+    id: "cat-electronics",
+    categoryName: "Electronics",
     description: "Electronic devices, gadgets, and accessories",
-    image: IMAGES.phones[0]
+    image: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop",
   },
-  { 
-    id: "cat-accessories", 
-    categoryName: "Accessories", 
-    description: "Phone and computer accessories, bags, and peripherals",
-    image: IMAGES.accessories[0]
-  },
-  { 
-    id: "cat-fashion", 
-    categoryName: "Fashion", 
+  {
+    id: "cat-fashion",
+    categoryName: "Fashion",
     description: "Clothing, shoes, and fashion accessories",
-    image: IMAGES.fashion[0]
+    image: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&h=300&fit=crop",
   },
-  { 
-    id: "cat-home", 
-    categoryName: "Home & Living", 
+  {
+    id: "cat-home",
+    categoryName: "Home & Living",
     description: "Home appliances, furniture, and decor",
-    image: IMAGES.home[0]
+    image: "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?w=400&h=300&fit=crop",
   },
-  { 
-    id: "cat-beauty", 
-    categoryName: "Beauty", 
+  {
+    id: "cat-food",
+    categoryName: "Food & Beverages",
+    description: "Food items, drinks, and grocery products",
+    image: "https://images.unsplash.com/photo-1556679343-c7306c1976bc?w=400&h=300&fit=crop",
+  },
+  {
+    id: "cat-beauty",
+    categoryName: "Beauty",
     description: "Skincare, makeup, and personal care products",
-    image: IMAGES.beauty[0]
+    image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=400&h=300&fit=crop",
+  },
+  {
+    id: "cat-sports",
+    categoryName: "Sports & Fitness",
+    description: "Sports equipment, gym gear, and fitness accessories",
+    image: "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=400&h=300&fit=crop",
   },
 ];
 
@@ -666,19 +679,24 @@ export const mockBusinessCategories: BusinessCategory[] = [
 ];
 
 // ---------------------------------------------------------------------------
-// Dashboard Stats
+// Dashboard Stats (exact data from Bootstrap MOCK_STATS)
 // ---------------------------------------------------------------------------
 export const mockDashboardStats = {
-  totalProducts: 10,
-  totalOrders: 8,
-  pendingOrders: 2,
-  totalRevenue: 3135000,
-  deliveredOrders: 2,
-  processingOrders: 2,
-  lowStockProducts: 1,
-  outOfStockProducts: 1,
-  activeProducts: 8,
-  inactiveProducts: 2,
+  totalProducts: 48,
+  totalOrders: 156,
+  pendingOrders: 12,
+  totalRevenue: 2450000,
+  totalCustomers: 892,
+  revenueGrowth: 23.5,
+  ordersGrowth: 18.2,
+  productsGrowth: 8.5,
+  customersGrowth: 15.8,
+  deliveredOrders: 4,
+  processingOrders: 1,
+  lowStockProducts: 0,
+  outOfStockProducts: 0,
+  activeProducts: 10,
+  inactiveProducts: 0,
 };
 
 // ---------------------------------------------------------------------------

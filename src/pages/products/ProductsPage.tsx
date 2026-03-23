@@ -89,7 +89,7 @@ export default function ProductsPage() {
           <p className="text-sm text-muted-foreground">Manage your product inventory</p>
         </div>
         <Link
-          to="/products/new"
+          to="/dashboard/products/new"
           className="inline-flex items-center justify-center px-4 py-2 bg-[#8DEB6E] text-primary rounded-md hover:bg-[#8DEB6E]/90 font-medium"
         >
           <Plus className="w-4 h-4 mr-2" />
@@ -143,7 +143,7 @@ export default function ProductsPage() {
           </p>
           {!search && statusFilter === 'all' && (
             <Link
-              to="/products/new"
+              to="/dashboard/products/new"
               className="inline-flex items-center px-4 py-2 bg-[#8DEB6E] text-primary rounded-md hover:bg-[#8DEB6E]/90"
             >
               <Plus className="w-4 h-4 mr-2" />
@@ -224,14 +224,14 @@ export default function ProductsPage() {
                             className="absolute right-0 mt-2 w-48 bg-card rounded-lg shadow-lg border border-border z-10"
                           >
                             <Link
-                              to={`/products/${product.productId}`}
+                              to={`/dashboard/products/${product.productId}`}
                               className="flex items-center px-4 py-2 text-sm text-foreground hover:bg-secondary"
                             >
                               <Eye className="w-4 h-4 mr-2" />
                               View Details
                             </Link>
                             <Link
-                              to={`/products/${product.productId}/edit`}
+                              to={`/dashboard/products/${product.productId}/edit`}
                               className="flex items-center px-4 py-2 text-sm text-foreground hover:bg-secondary"
                             >
                               <Edit className="w-4 h-4 mr-2" />

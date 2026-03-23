@@ -83,18 +83,36 @@ export const dashboardService = {
         products: [],
       }));
 
-    // Calculate top products (by stock value)
+    // Deterministic sales data matching Bootstrap version
+    const salesData: Record<string, number> = {
+      'prod-001': 234,  // Wireless Bluetooth Headphones
+      'prod-002': 189,  // Smart Watch Pro
+      'prod-003': 156,  // Leather Crossbody Bag
+      'prod-004': 312,  // Organic Green Tea Set
+      'prod-005': 98,   // Minimalist Desk Lamp
+      'prod-006': 445,  // Cotton T-Shirt Pack
+      'prod-007': 267,  // Portable Power Bank
+      'prod-008': 178,  // Yoga Mat Premium
+      'prod-009': 134,  // Ceramic Coffee Mug Set
+      'prod-010': 201,  // Natural Skincare Set
+    };
+
+    // Calculate top products (sorted by sales, matching Bootstrap)
     const topProducts: TopProduct[] = mockProducts
       .filter(p => p.isActive)
-      .sort((a, b) => parseInt(b.stock) - parseInt(a.stock))
-      .slice(0, 5)
-      .map(product => ({
-        productId: product.productId,
-        productName: product.productName,
-        totalSold: Math.floor(Math.random() * 50) + 10,
-        totalRevenue: parseInt(product.unitPrice) * (Math.floor(Math.random() * 50) + 10),
-        totalOrders: Math.floor(Math.random() * 20) + 5,
-      }));
+      .map(product => {
+        const sold = salesData[product.productId] || 0;
+        return {
+          productId: product.productId,
+          productName: product.productName,
+          totalSold: sold,
+          totalRevenue: parseInt(product.unitPrice) * sold,
+          totalOrders: Math.floor(sold / 3),
+          image: product.images[0] || '',
+        };
+      })
+      .sort((a, b) => b.totalSold - a.totalSold)
+      .slice(0, 5);
 
     return {
       totalProducts: mockDashboardStats.totalProducts,

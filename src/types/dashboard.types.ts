@@ -39,6 +39,7 @@ export interface TopProduct {
   totalSold: number;
   totalRevenue: number;
   totalOrders: number;
+  image?: string;
 }
 
 export interface VendorProfile {

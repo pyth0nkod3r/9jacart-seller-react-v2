@@ -106,7 +106,7 @@ export default function AddProductPage() {
           <p className="text-sm text-muted-foreground">Create a new product listing</p>
         </div>
         <Link
-          to="/products"
+          to="/dashboard/products"
           className="px-4 py-2 border border-border rounded-md hover:bg-accent"
         >
           Cancel
@@ -298,7 +298,7 @@ export default function AddProductPage() {
         {/* Submit */}
         <div className="flex justify-end gap-4">
           <Link
-            to="/products"
+            to="/dashboard/products"
             className="px-6 py-2 border border-border rounded-md hover:bg-accent"
           >
             Cancel

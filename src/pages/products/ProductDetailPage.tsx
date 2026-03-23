@@ -39,7 +39,7 @@ export default function ProductDetailPage() {
       } else {
         popup.success('Product deleted successfully');
       }
-      navigate('/products');
+      navigate('/dashboard/products');
     } catch (err) {
       popup.error(err instanceof Error ? err.message : 'Failed to delete product');
     }
@@ -72,7 +72,7 @@ export default function ProductDetailPage() {
     return (
       <div className="text-center py-12">
         <p className="text-muted-foreground">Product not found</p>
-        <Link to="/products" className="text-primary hover:underline mt-4 inline-block">
+        <Link to="/dashboard/products" className="text-primary hover:underline mt-4 inline-block">
           Back to Products
         </Link>
       </div>
@@ -83,7 +83,7 @@ export default function ProductDetailPage() {
     <div className="space-y-6">
       {/* Breadcrumb */}
       <nav className="flex items-center space-x-2 text-sm text-muted-foreground">
-        <Link to="/products" className="hover:text-foreground">Products</Link>
+        <Link to="/dashboard/products" className="hover:text-foreground">Products</Link>
         <span>/</span>
         <span className="text-foreground">{product.productName}</span>
       </nav>
@@ -118,7 +118,7 @@ export default function ProductDetailPage() {
 
             <div className="flex gap-4">
               <Link
-                to={`/products/${id}/edit`}
+                to={`/dashboard/products/${id}/edit`}
                 className="px-4 py-2 bg-[#8DEB6E] text-primary rounded-md hover:bg-[#8DEB6E]/90"
               >
                 Edit Product

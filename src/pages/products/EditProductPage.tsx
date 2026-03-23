@@ -73,7 +73,7 @@ export default function EditProductPage() {
         minStock: formData.minStock,
       });
       popup.success('Product updated successfully!');
-      navigate(`/products/${id}`);
+      navigate(`/dashboard/products/${id}`);
     } catch (err) {
       popup.error(err instanceof Error ? err.message : 'Failed to update product');
     } finally {
@@ -104,7 +104,7 @@ export default function EditProductPage() {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-4">
-        <Link to={`/products/${id}`} className="text-muted-foreground hover:text-foreground">
+        <Link to={`/dashboard/products/${id}`} className="text-muted-foreground hover:text-foreground">
           ← Back to product
         </Link>
       </div>
@@ -172,7 +172,7 @@ export default function EditProductPage() {
 
         <div className="flex gap-4">
           <Link
-            to={`/products/${id}`}
+            to={`/dashboard/products/${id}`}
             className="px-6 py-2 border border-border rounded-md hover:bg-accent"
           >
             Cancel
