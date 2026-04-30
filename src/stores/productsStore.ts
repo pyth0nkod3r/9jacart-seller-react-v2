@@ -135,10 +135,10 @@ export const useProductsStore = create<ProductsStore>()(
 
         const paginationData = normalizedSearch
           ? {
-              ...basePagination,
-              totalItems: filteredProducts.length,
-              totalPages: Math.max(1, Math.ceil(filteredProducts.length / perPage)),
-            }
+            ...basePagination,
+            totalItems: filteredProducts.length,
+            totalPages: Math.max(1, Math.ceil(filteredProducts.length / perPage)),
+          }
           : basePagination;
 
         set({
@@ -214,6 +214,8 @@ export const useProductsStore = create<ProductsStore>()(
           stock: parseInt(productData.stock),
           minStock: parseInt(productData.minStock),
           tag: productData.productTags,
+          sku: productData.sku || undefined,
+          weight: productData.weight ? parseFloat(productData.weight) : undefined,
         });
 
         const currentState = get();

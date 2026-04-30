@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, Bell, User, LogOut, ChevronDown } from 'lucide-react';
+import { Menu, Bell, User, LogOut, ChevronDown, Store } from 'lucide-react';
 import { useAuthStore } from '@/stores/authStore';
 import { useSuspensionCheck } from '@/hooks/useSuspensionCheck';
 import { useFeatures } from '@/providers/ThemeProvider';
@@ -100,6 +100,16 @@ export default function Header({ onMenuClick }: HeaderProps) {
                       >
                         <User className="w-4 h-4 mr-2" />
                         Settings
+                      </Link>
+                    )}
+                    {features.enableStorefront && (
+                      <Link
+                        to="/dashboard/storefront"
+                        onClick={() => setIsProfileOpen(false)}
+                        className="flex items-center px-4 py-2 text-sm text-foreground hover:bg-secondary"
+                      >
+                        <Store className="w-4 h-4 mr-2" />
+                        My Store
                       </Link>
                     )}
                     <button

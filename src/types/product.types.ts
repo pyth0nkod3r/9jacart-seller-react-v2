@@ -13,6 +13,10 @@ export interface Product {
   minStock: string;
   images: string[];
   isActive: string | number | boolean;
+  /** Stock-keeping unit — backported from bootstrap add-product form */
+  sku?: string;
+  /** Shipping weight in kilograms — backported from bootstrap add-product form */
+  weight?: string;
   vendorId?: string;
   vendorStorefrontUrl?: string;
   createdAt: string;
@@ -60,6 +64,10 @@ export interface CreateProductRequest {
   minStock: string;
   images: File[];
   isActive?: string;
+  /** Optional SKU — bootstrap parity */
+  sku?: string;
+  /** Optional shipping weight in kg — bootstrap parity */
+  weight?: string;
 }
 
 export interface CreateProductPayload {
@@ -72,6 +80,8 @@ export interface CreateProductPayload {
   stock: number;
   minStock: number;
   tag: string[];
+  sku?: string;
+  weight?: number;
 }
 
 export interface UploadProductImagesRequest {
@@ -93,6 +103,8 @@ export interface EditProductPayload {
   stock?: number;
   minStock?: number;
   tag?: string[];
+  sku?: string;
+  weight?: number;
 }
 
 export interface ProductsState {

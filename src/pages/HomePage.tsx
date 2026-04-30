@@ -9,6 +9,8 @@ import Footer from '@/components/homepage/Footer';
 import HeroSection from '@/components/homepage/HeroSection';
 import Incentive from '@/components/homepage/Incentive';
 import ProductGallerySection from '@/components/homepage/ProductGallerySection';
+import StatsSection from '@/components/homepage/StatsSection';
+import TestimonialsSection from '@/components/homepage/TestimonialsSection';
 import TrailerSection from '@/components/homepage/TrailerSection';
 import ScrollToTop from '@/components/ScrollToTop';
 import MainHeader from '@/components/MainHeader';
@@ -31,10 +33,12 @@ export default function HomePage() {
     <div className="min-h-screen bg-background">
       <MainHeader />
       <HeroSection />
+      <StatsSection />
       <AboutSection />
       <Experience />
       <BenefitsSection />
       <ProductGallerySection />
+      <TestimonialsSection />
       <Incentive />
       <TrailerSection />
       <CTASection />

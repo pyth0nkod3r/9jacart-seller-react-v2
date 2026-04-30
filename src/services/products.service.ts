@@ -96,6 +96,8 @@ export const productsService = {
       minStock: data.minStock.toString(),
       images: [],
       isActive: true,
+      sku: data.sku,
+      weight: data.weight !== undefined ? data.weight.toString() : undefined,
       vendorId: 'vendor-mock-001',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),

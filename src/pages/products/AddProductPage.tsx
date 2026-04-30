@@ -23,6 +23,18 @@ export default function AddProductPage() {
     minStock: '',
     productTags: [] as string[],
     images: [] as File[],
+    // Bootstrap-parity fields (merged from `bootstrap_version/.../add-product.html`)
+    brand: '',
+    sku: '',
+    barcode: '',
+    compareAtPrice: '',
+    costPerItem: '',
+    weight: '',
+    length: '',
+    width: '',
+    height: '',
+    status: 'active' as 'active' | 'draft' | 'inactive',
+    featured: false,
   });
 
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -89,6 +101,9 @@ export default function AddProductPage() {
         stock: formData.stock,
         minStock: formData.minStock || '0',
         images: formData.images,
+        sku: formData.sku || undefined,
+        weight: formData.weight || undefined,
+        isActive: formData.status === 'active' ? 'true' : 'false',
       });
 
       popup.success('Product created successfully!');
@@ -195,7 +210,7 @@ export default function AddProductPage() {
             {/* Inventory */}
             <div className="bg-card rounded-lg border border-border p-6">
               <h3 className="text-lg font-semibold text-foreground mb-4">Inventory</h3>
-              <div className="grid grid-cols-2 gap-4">
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-foreground mb-1">
                     Stock Quantity *
@@ -225,12 +240,150 @@ export default function AddProductPage() {
                     min="0"
                   />
                 </div>
+                {/* SKU — backported from bootstrap add-product (typed) */}
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1">SKU</label>
+                  <input
+                    type="text"
+                    value={formData.sku}
+                    onChange={(e) => updateForm('sku', e.target.value)}
+                    className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="SKU-001"
+                  />
+                </div>
+                {/* Brand — backported from bootstrap add-product */}
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1">Brand</label>
+                  <input
+                    type="text"
+                    value={formData.brand}
+                    onChange={(e) => updateForm('brand', e.target.value)}
+                    className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="Brand name"
+                  />
+                </div>
+                {/* Barcode — backported from bootstrap add-product */}
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1">Barcode</label>
+                  <input
+                    type="text"
+                    value={formData.barcode}
+                    onChange={(e) => updateForm('barcode', e.target.value)}
+                    className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="Optional"
+                  />
+                </div>
+                {/* Compare-at price — backported from bootstrap */}
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1">
+                    Compare at Price (₦)
+                  </label>
+                  <input
+                    type="number"
+                    value={formData.compareAtPrice}
+                    onChange={(e) => updateForm('compareAtPrice', e.target.value)}
+                    className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="0.00"
+                    min="0"
+                  />
+                  <p className="mt-1 text-xs text-muted-foreground">Original price for showing discount</p>
+                </div>
+                {/* Cost per item — backported from bootstrap */}
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1">
+                    Cost per Item (₦)
+                  </label>
+                  <input
+                    type="number"
+                    value={formData.costPerItem}
+                    onChange={(e) => updateForm('costPerItem', e.target.value)}
+                    className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                    placeholder="0.00"
+                    min="0"
+                  />
+                  <p className="mt-1 text-xs text-muted-foreground">For profit margin calculation</p>
+                </div>
+              </div>
+            </div>
+
+            {/* Shipping — backported from bootstrap add-product (Weight + Dimensions) */}
+            <div className="bg-card rounded-lg border border-border p-6">
+              <h3 className="text-lg font-semibold text-foreground mb-4">Shipping</h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1">Weight (kg)</label>
+                  <input
+                    type="number"
+                    value={formData.weight}
+                    onChange={(e) => updateForm('weight', e.target.value)}
+                    step="0.1"
+                    min="0"
+                    placeholder="0.0"
+                    className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1">Length (cm)</label>
+                  <input
+                    type="number"
+                    value={formData.length}
+                    onChange={(e) => updateForm('length', e.target.value)}
+                    min="0"
+                    placeholder="0"
+                    className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1">Width (cm)</label>
+                  <input
+                    type="number"
+                    value={formData.width}
+                    onChange={(e) => updateForm('width', e.target.value)}
+                    min="0"
+                    placeholder="0"
+                    className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-foreground mb-1">Height (cm)</label>
+                  <input
+                    type="number"
+                    value={formData.height}
+                    onChange={(e) => updateForm('height', e.target.value)}
+                    min="0"
+                    placeholder="0"
+                    className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary"
+                  />
+                </div>
               </div>
             </div>
           </div>
 
           {/* Sidebar */}
           <div className="space-y-6">
+            {/* Status — backported from bootstrap add-product sidebar */}
+            <div className="bg-card rounded-lg border border-border p-6">
+              <h3 className="text-lg font-semibold text-foreground mb-4">Status</h3>
+              <select
+                value={formData.status}
+                onChange={(e) => updateForm('status', e.target.value)}
+                className="w-full px-3 py-2 border border-border rounded-md focus:outline-none focus:ring-2 focus:ring-primary mb-3"
+              >
+                <option value="active">Active</option>
+                <option value="draft">Draft</option>
+                <option value="inactive">Inactive</option>
+              </select>
+              <label className="flex items-center gap-2 text-sm text-foreground">
+                <input
+                  type="checkbox"
+                  checked={formData.featured}
+                  onChange={(e) => updateForm('featured', e.target.checked)}
+                  className="w-4 h-4"
+                />
+                Featured product
+              </label>
+            </div>
+
             {/* Category */}
             <div className="bg-card rounded-lg border border-border p-6">
               <h3 className="text-lg font-semibold text-foreground mb-4">Category</h3>
