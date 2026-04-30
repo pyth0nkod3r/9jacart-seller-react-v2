@@ -10,6 +10,7 @@ export interface OrdersQuery {
   orderNo?: string;
   paymentMethod?: string;
   sortBy?: string;
+  search?: string;
 }
 
 export interface Order {

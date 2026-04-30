@@ -4,12 +4,11 @@
  * All API calls replaced with mock data.
  */
 
-import { 
-  delay, 
-  mockProducts, 
-  mockCategories, 
-  mockStorefrontProducts,
-  IMAGES 
+import {
+  delay,
+  mockProducts,
+  mockCategories,
+  IMAGES
 } from '@/lib/mock-data';
 import type { StorefrontProduct, StorefrontCategory } from '@/types';
 
@@ -53,18 +52,23 @@ export const storefrontService = {
 
     const storefrontProducts: StorefrontProduct[] = filtered
       .slice(start, start + perPage)
-      .map(p => ({
-        productId: p.productId,
-        productName: p.productName,
-        productDescription: p.productDescription,
-        unitPrice: parseFloat(p.unitPrice),
-        discountPrice: parseFloat(p.discountPrice) || parseFloat(p.unitPrice),
-        images: p.images,
-        categoryName: p.categoryName,
-        inStock: parseInt(p.stock) > 0,
-        rating: 4 + Math.random(),
-        reviewCount: Math.floor(Math.random() * 100) + 5,
-      }));
+      .map(p => {
+        const price = parseFloat(p.unitPrice);
+        const discount = parseFloat(p.discountPrice);
+        return {
+          id: p.productId,
+          name: p.productName,
+          price: discount || price,
+          originalPrice: discount ? price : undefined,
+          imageUrl: p.images[0],
+          description: p.productDescription,
+          shortDescription: p.productDescription,
+          inStock: parseInt(p.stock) > 0,
+          reviewsAverage: 4 + Math.random(),
+          reviewsTotal: Math.floor(Math.random() * 100) + 5,
+          category: p.categoryName ?? undefined,
+        };
+      });
 
     return {
       data: storefrontProducts,
@@ -83,18 +87,23 @@ export const storefrontService = {
     return mockProducts
       .filter(p => p.isActive)
       .slice(0, 4)
-      .map(p => ({
-        productId: p.productId,
-        productName: p.productName,
-        productDescription: p.productDescription,
-        unitPrice: parseFloat(p.unitPrice),
-        discountPrice: parseFloat(p.discountPrice) || parseFloat(p.unitPrice),
-        images: p.images,
-        categoryName: p.categoryName,
-        inStock: parseInt(p.stock) > 0,
-        rating: 4 + Math.random(),
-        reviewCount: Math.floor(Math.random() * 100) + 5,
-      }));
+      .map(p => {
+        const price = parseFloat(p.unitPrice);
+        const discount = parseFloat(p.discountPrice);
+        return {
+          id: p.productId,
+          name: p.productName,
+          price: discount || price,
+          originalPrice: discount ? price : undefined,
+          imageUrl: p.images[0],
+          description: p.productDescription,
+          shortDescription: p.productDescription,
+          inStock: parseInt(p.stock) > 0,
+          reviewsAverage: 4 + Math.random(),
+          reviewsTotal: Math.floor(Math.random() * 100) + 5,
+          category: p.categoryName ?? undefined,
+        };
+      });
   },
 
   async getCategories(): Promise<StorefrontCategory[]> {
@@ -102,8 +111,7 @@ export const storefrontService = {
 
     return mockCategories.map(cat => ({
       id: cat.id,
-      categoryName: cat.categoryName,
-      description: cat.description,
+      name: cat.categoryName,
       image: cat.image || IMAGES.placeholder,
       productCount: mockProducts.filter(p => p.categoryId === cat.id && p.isActive).length,
     }));
@@ -115,17 +123,20 @@ export const storefrontService = {
     const product = mockProducts.find(p => p.productId === productId && p.isActive);
     if (!product) return null;
 
+    const price = parseFloat(product.unitPrice);
+    const discount = parseFloat(product.discountPrice);
     return {
-      productId: product.productId,
-      productName: product.productName,
-      productDescription: product.productDescription,
-      unitPrice: parseFloat(product.unitPrice),
-      discountPrice: parseFloat(product.discountPrice) || parseFloat(product.unitPrice),
-      images: product.images,
-      categoryName: product.categoryName,
+      id: product.productId,
+      name: product.productName,
+      price: discount || price,
+      originalPrice: discount ? price : undefined,
+      imageUrl: product.images[0],
+      description: product.productDescription,
+      shortDescription: product.productDescription,
       inStock: parseInt(product.stock) > 0,
-      rating: 4 + Math.random(),
-      reviewCount: Math.floor(Math.random() * 100) + 5,
+      reviewsAverage: 4 + Math.random(),
+      reviewsTotal: Math.floor(Math.random() * 100) + 5,
+      category: product.categoryName ?? undefined,
     };
   },
 

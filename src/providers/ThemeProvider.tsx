@@ -158,7 +158,7 @@ export function ThemeProvider({
   enableSystemPreference = true,
 }: ThemeProviderProps) {
   // Config and themes state
-  const [config, setConfig] = useState<ExternalConfig | null>(null);
+  const [, setConfig] = useState<ExternalConfig | null>(null);
   const [themes, setThemes] = useState<Record<string, ThemeConfig>>({});
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
@@ -177,15 +177,15 @@ export function ThemeProvider({
       .then((loadedConfig) => {
         setConfig(loadedConfig);
         setThemes(generateThemesFromConfig(loadedConfig));
-        
+
         // Set default theme from config if no stored preference
         if (!getStoredTheme() && !initialTheme) {
           setThemeId(loadedConfig.theme.default);
         }
-        
+
         // Update page title
         document.title = `${loadedConfig.brand.name} - ${loadedConfig.brand.tagline}`;
-        
+
         setIsLoading(false);
       })
       .catch((err) => {
@@ -225,7 +225,7 @@ export function ThemeProvider({
   const getThemeValue = useCallback(
     <T,>(path: string, defaultValue?: T): T | undefined => {
       if (!theme) return defaultValue;
-      
+
       const keys = path.split('.');
       let result: unknown = theme;
 

@@ -6,9 +6,9 @@ export default function Footer() {
   const navigation = useNavigation();
 
   return (
-    <footer 
+    <footer
       className="border-t"
-      style={{ 
+      style={{
         backgroundColor: 'var(--sidebar)',
         color: 'var(--sidebar-foreground)',
       }}
@@ -17,7 +17,7 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8">
           {/* Logo & Description */}
           <div className="md:col-span-2">
-            <h3 
+            <h3
               className="text-xl font-bold mb-4"
               style={{ color: 'var(--brand-accent)' }}
             >
@@ -37,7 +37,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-2 rounded-full transition-colors hover:opacity-80"
-                    style={{ backgroundColor: 'var(--brand-accent)', color: 'var(--primary)' }}
+                    style={{ backgroundColor: 'var(--brand-accent)', color: 'var(--primary-foreground)' }}
                     title={link.name}
                   >
                     {link.icon === 'twitter' && (
@@ -72,8 +72,8 @@ export default function Footer() {
             <ul className="space-y-2">
               {navigation.footerNav.map((item) => (
                 <li key={item.name}>
-                  <Link 
-                    to={item.href} 
+                  <Link
+                    to={item.href}
                     className="text-sm opacity-80 hover:opacity-100 transition-opacity"
                   >
                     {item.name}
@@ -89,8 +89,8 @@ export default function Footer() {
             <ul className="space-y-2">
               {navigation.legalLinks.map((item) => (
                 <li key={item.name}>
-                  <Link 
-                    to={item.href} 
+                  <Link
+                    to={item.href}
                     className="text-sm opacity-80 hover:opacity-100 transition-opacity"
                   >
                     {item.name}
@@ -101,7 +101,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div 
+        <div
           className="border-t mt-8 pt-8 text-center"
           style={{ borderColor: 'rgba(255,255,255,0.1)' }}
         >

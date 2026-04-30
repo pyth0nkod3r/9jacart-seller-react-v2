@@ -35,11 +35,10 @@ export default function MainHeader() {
               <Link
                 key={item.name}
                 to={item.href}
-                className={`text-sm font-medium transition-colors ${
-                  isActive(item.href)
+                className={`text-sm font-medium transition-colors ${isActive(item.href)
                     ? 'text-primary'
                     : 'text-muted-foreground hover:text-foreground'
-                }`}
+                  }`}
               >
                 {item.name}
               </Link>
@@ -97,11 +96,10 @@ export default function MainHeader() {
                     key={item.name}
                     to={item.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className={`block px-4 py-2 text-sm font-medium rounded-md ${
-                      isActive(item.href)
+                    className={`block px-4 py-2 text-sm font-medium rounded-md ${isActive(item.href)
                         ? 'bg-primary/10 text-primary'
                         : 'text-muted-foreground hover:bg-secondary hover:text-foreground'
-                    }`}
+                      }`}
                   >
                     {item.name}
                   </Link>
@@ -118,9 +116,9 @@ export default function MainHeader() {
                     to="/register"
                     onClick={() => setIsMenuOpen(false)}
                     className="block px-4 py-2 text-sm font-medium text-center rounded-md"
-                    style={{ 
+                    style={{
                       backgroundColor: 'var(--brand-accent)',
-                      color: 'var(--primary)',
+                      color: 'var(--primary-foreground)',
                     }}
                   >
                     Get Started

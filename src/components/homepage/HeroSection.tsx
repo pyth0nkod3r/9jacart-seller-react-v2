@@ -35,7 +35,7 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/register"
-                className="inline-flex items-center justify-center px-6 py-3 text-primary font-semibold rounded-lg hover:opacity-90 transition-colors"
+                className="inline-flex items-center justify-center px-6 py-3 text-primary-foreground font-semibold rounded-lg hover:opacity-90 transition-colors"
                 style={{ backgroundColor: 'var(--brand-accent)' }}
               >
                 Start Selling Free
@@ -74,7 +74,7 @@ export default function HeroSection() {
                   {/* Mock Dashboard Preview */}
                   <div className="flex items-center justify-between">
                     <div className="h-4 w-32 bg-primary/20 rounded" />
-                    <div 
+                    <div
                       className="h-8 w-24 rounded"
                       style={{ backgroundColor: 'var(--brand-accent)' }}
                     />
