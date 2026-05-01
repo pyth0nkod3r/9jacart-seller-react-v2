@@ -107,7 +107,7 @@ export default function AboutSection() {
               <div className="mt-8 pt-6 border-t border-border">
                 <Link
                   to="/register"
-                  className="block w-full text-center px-4 py-3 bg-[#8DEB6E] text-primary font-semibold rounded-lg hover:bg-[#8DEB6E]/90 transition-colors"
+                  className="block w-full text-center px-4 py-3 bg-brand-accent text-primary font-semibold rounded-lg hover:bg-brand-accent/90 transition-colors"
                 >
                   Join Sellers Now
                 </Link>

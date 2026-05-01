@@ -99,7 +99,7 @@ const ResetPasswordPage: React.FC = () => {
       });
       setSuccess(true);
       setTimeout(() => {
-        navigate('/auth/login', { state: { resetSuccess: true } });
+        navigate('/login', { state: { resetSuccess: true } });
       }, 2000);
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Failed to reset password. Please try again.');

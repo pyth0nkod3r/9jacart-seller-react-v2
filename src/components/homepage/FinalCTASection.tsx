@@ -12,7 +12,7 @@ export default function FinalCTASection() {
         </p>
         <Link
           to="/register"
-          className="inline-flex items-center px-8 py-4 bg-[#8DEB6E] text-primary font-semibold rounded-lg hover:bg-[#8DEB6E]/90 transition-colors text-lg"
+          className="inline-flex items-center px-8 py-4 bg-brand-accent text-primary font-semibold rounded-lg hover:bg-brand-accent/90 transition-colors text-lg"
         >
           Get Started Free
         </Link>

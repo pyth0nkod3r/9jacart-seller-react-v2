@@ -90,7 +90,7 @@ export default function ProductsPage() {
         </div>
         <Link
           to="/dashboard/products/new"
-          className="inline-flex items-center justify-center px-4 py-2 bg-[#8DEB6E] text-primary rounded-md hover:bg-[#8DEB6E]/90 font-medium"
+          className="inline-flex items-center justify-center px-4 py-2 bg-brand-accent text-primary rounded-md hover:bg-brand-accent/90 font-medium"
         >
           <Plus className="w-4 h-4 mr-2" />
           Add Product
@@ -144,7 +144,7 @@ export default function ProductsPage() {
           {!search && statusFilter === 'all' && (
             <Link
               to="/dashboard/products/new"
-              className="inline-flex items-center px-4 py-2 bg-[#8DEB6E] text-primary rounded-md hover:bg-[#8DEB6E]/90"
+              className="inline-flex items-center px-4 py-2 bg-brand-accent text-primary rounded-md hover:bg-brand-accent/90"
             >
               <Plus className="w-4 h-4 mr-2" />
               Add Product

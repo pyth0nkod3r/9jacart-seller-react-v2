@@ -180,7 +180,7 @@ export default function EditProductPage() {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="px-6 py-2 bg-[#8DEB6E] text-primary rounded-md hover:bg-[#8DEB6E]/90 disabled:opacity-50 flex items-center gap-2"
+            className="px-6 py-2 bg-brand-accent text-primary rounded-md hover:bg-brand-accent/90 disabled:opacity-50 flex items-center gap-2"
           >
             {isSubmitting ? (
               <>

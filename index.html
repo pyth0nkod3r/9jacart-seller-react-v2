@@ -1,13 +1,36 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SellerHub - E-commerce Seller Platform</title>
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/logo.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SellerHub - E-commerce Seller Platform</title>
+  <script>
+    /*
+     * FOUC prevention — read the stored theme preference synchronously
+     * and apply the matching `.theme-*` / `.dark` class to <html> before
+     * React mounts. The CSS fallbacks in src/index.css then render the
+     * correct palette on first paint. ThemeProvider re-syncs after mount.
+     */
+    (function () {
+      try {
+        var stored = localStorage.getItem('sellerhub-theme-preference');
+        var theme = stored || 'default';
+        var root = document.documentElement;
+        if (theme === 'dark') {
+          root.classList.add('dark');
+        } else if (theme !== 'default') {
+          root.classList.add('theme-' + theme);
+        }
+      } catch (_) { }
+    })();
+  </script>
+</head>
+
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
 </html>

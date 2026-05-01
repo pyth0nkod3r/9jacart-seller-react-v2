@@ -105,7 +105,7 @@ export function Pagination({
                 className={cn(
                   'relative inline-flex items-center px-4 py-2 text-sm font-medium border disabled:opacity-50 disabled:cursor-not-allowed',
                   page === currentPage
-                    ? 'z-10 bg-[#8DEB6E] border-[#8DEB6E] text-primary'
+                    ? 'z-10 bg-brand-accent border-brand-accent text-primary'
                     : 'bg-card border-border text-muted-foreground hover:bg-accent'
                 )}
               >

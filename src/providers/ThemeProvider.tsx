@@ -257,7 +257,18 @@ export function ThemeProvider({
       root.classList.remove('dark');
       root.classList.add('light');
     }
-  }, [theme]);
+
+    // Toggle a `theme-{id}` class for non-default/dark themes so the static
+    // CSS fallbacks in `index.css` (.theme-ocean / .theme-purple / .theme-sunset)
+    // engage immediately on load and prevent a flash of the wrong palette.
+    const themeClassPrefix = 'theme-';
+    Array.from(root.classList)
+      .filter((c) => c.startsWith(themeClassPrefix))
+      .forEach((c) => root.classList.remove(c));
+    if (themeId && themeId !== 'default' && themeId !== 'dark') {
+      root.classList.add(`${themeClassPrefix}${themeId}`);
+    }
+  }, [theme, themeId]);
 
   // Listen for system preference changes
   useEffect(() => {

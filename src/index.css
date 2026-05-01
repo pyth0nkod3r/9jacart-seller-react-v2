@@ -223,20 +223,106 @@
   --brand-info: oklch(0.64 0.15 230);
 }
 
+/*
+ * Purple Theme — aligned with bootstrap themes.config.json "purple" theme.
+ * primary #8b5cf6, background #faf5ff, sidebar-bg #4c1d95
+ * Hex values used here for fast, lossless FOUC-prevention; runtime ThemeProvider
+ * later overrides via inline styles using the same template.config.json values.
+ */
+.theme-purple {
+  --background: #faf5ff;
+  --foreground: #4c1d95;
+  --card: #ffffff;
+  --card-foreground: #4c1d95;
+  --popover: #ffffff;
+  --popover-foreground: #4c1d95;
+  --primary: #8b5cf6;
+  --primary-foreground: #ffffff;
+  --secondary: #f3e8ff;
+  --secondary-foreground: #4c1d95;
+  --muted: #f3e8ff;
+  --muted-foreground: #6b21a8;
+  --accent: #f3e8ff;
+  --accent-foreground: #4c1d95;
+  --destructive: #ef4444;
+  --border: #e9d5ff;
+  --input: #ffffff;
+  --ring: #8b5cf6;
+  --sidebar: #4c1d95;
+  --sidebar-foreground: #faf5ff;
+  --sidebar-primary: #8b5cf6;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #8b5cf6;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #6b21a8;
+  --sidebar-ring: #8b5cf6;
+  --brand-accent: #a78bfa;
+  --brand-highlight: #a78bfa;
+  --brand-success: #22c55e;
+  --brand-warning: #f59e0b;
+  --brand-info: #8b5cf6;
+}
+
+/*
+ * Sunset Theme — aligned with bootstrap themes.config.json "sunset" theme.
+ * primary #f97316, background #fffbeb, sidebar-bg #78350f
+ */
+.theme-sunset {
+  --background: #fffbeb;
+  --foreground: #78350f;
+  --card: #ffffff;
+  --card-foreground: #78350f;
+  --popover: #ffffff;
+  --popover-foreground: #78350f;
+  --primary: #f97316;
+  --primary-foreground: #ffffff;
+  --secondary: #fef3c7;
+  --secondary-foreground: #78350f;
+  --muted: #fef3c7;
+  --muted-foreground: #92400e;
+  --accent: #fef3c7;
+  --accent-foreground: #78350f;
+  --destructive: #ef4444;
+  --border: #fde68a;
+  --input: #ffffff;
+  --ring: #f97316;
+  --sidebar: #78350f;
+  --sidebar-foreground: #fffbeb;
+  --sidebar-primary: #f97316;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f97316;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #92400e;
+  --sidebar-ring: #f97316;
+  --brand-accent: #fb923c;
+  --brand-highlight: #fb923c;
+  --brand-success: #22c55e;
+  --brand-warning: #f59e0b;
+  --brand-info: #3b82f6;
+}
+
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     line-height: 1.6;
   }
-  h1, h2, h3, h4, h5, h6 {
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-weight: 600;
     line-height: 1.3;
     color: var(--foreground);
   }
+
   a {
     text-decoration: none;
     transition: color 0.3s;
@@ -248,6 +334,7 @@
     -ms-overflow-style: none;
     scrollbar-width: none;
   }
+
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
@@ -256,15 +343,19 @@
   .bg-brand-accent {
     background-color: var(--brand-accent);
   }
+
   .text-brand-accent {
     color: var(--brand-accent);
   }
+
   .bg-brand-highlight {
     background-color: var(--brand-highlight);
   }
+
   .text-brand-highlight {
     color: var(--brand-highlight);
   }
+
   .border-brand-accent {
     border-color: var(--brand-accent);
   }
@@ -273,9 +364,11 @@
   .sidebar-bg {
     background-color: var(--sidebar);
   }
+
   .sidebar-text {
     color: var(--sidebar-foreground);
   }
+
   .sidebar-active {
     background-color: var(--sidebar-primary);
     color: var(--sidebar-primary-foreground);

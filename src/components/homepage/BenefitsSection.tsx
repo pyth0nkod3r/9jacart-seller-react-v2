@@ -72,7 +72,7 @@ export default function BenefitsSection() {
         >
           <Link
             to="/register"
-            className="inline-flex items-center px-6 py-3 bg-[#8DEB6E] text-primary font-semibold rounded-lg hover:bg-[#8DEB6E]/90 transition-colors"
+            className="inline-flex items-center px-6 py-3 bg-brand-accent text-primary font-semibold rounded-lg hover:bg-brand-accent/90 transition-colors"
           >
             Start Selling Today
           </Link>

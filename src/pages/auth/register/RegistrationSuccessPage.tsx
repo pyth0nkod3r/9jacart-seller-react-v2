@@ -36,7 +36,7 @@ export default function RegistrationSuccessPage() {
 
           <Link
             to="/login"
-            className="inline-block w-full px-6 py-3 bg-[#8DEB6E] text-primary rounded-md hover:bg-[#8DEB6E]/90 transition-colors font-medium"
+            className="inline-block w-full px-6 py-3 bg-brand-accent text-primary rounded-md hover:bg-brand-accent/90 transition-colors font-medium"
           >
             Continue to Login
           </Link>
